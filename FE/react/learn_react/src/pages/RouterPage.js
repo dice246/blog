@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import MyDialog from "./MyDialog";
 import Search from "./Search";
+import NotFound from './NotFound'
 import { Menu } from 'antd';
 import  './index.css'
 
@@ -22,8 +23,11 @@ class RouterPage extends Component {
             <Link to={'/search/1'}>search</Link>
           </nav>
 
-          <Route exact path={'/my-dialog'} component={MyDialog}/>
-          <Route path={'/search/:id'} component={Search}/>
+          <Switch>
+            <Route exact path={'/my-dialog'} component={MyDialog}/>
+            <Route path={'/search/:id'} component={Search}/>
+            <Route component={NotFound}/>
+          </Switch>
         </BrowserRouter>
       </div>
     )
