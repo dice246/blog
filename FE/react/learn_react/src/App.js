@@ -8,6 +8,7 @@ import ReactReduxPage from "./pages/ReactReduxPage";
 import MyReduxPage from "./pages/MyReduxPage";
 import MyReactReduxPage from "./pages/MyReactReduxPage";
 import RouterPage from "./pages/RouterPage";
+import MyReactRouterPage from "./pages/MyReactRouterPage";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/*<ReactReduxPage/>*/}
       {/*<MyReduxPage/>*/}
       {/*<MyReactReduxPage/>*/}
-      <RouterPage/>
+      {/*<RouterPage/>*/}
+      <MyReactRouterPage/>
     </div>
   );
 }
