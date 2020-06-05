@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      width: 600px;
+      height: 600px;
+      text-align: center;
+    }
+
+    .left {
+      flex: 1 2 300px;
+      background: #ff6c00;
+    }
+
+    .right {
+      flex: 2 1 200px;
+      background: #61dafb;
+    }
+  </style>
+</head>
+<body>
+<h1>求最终 left、right 的宽度</h1>
+  <div class="container">
+    <div class="left">
+      flex: 1 2 300px;
+      <p>width: 300px + (600 - 300 - 200) / 3 = 333.33px</p>
+    </div>
+    <div class="right">
+      flex: 2 1 200px;
+      <p>width: 200px + (600 -300 - 200) / 3 * 2 = 266.67px</p>
+    </div>
+  </div>
+</body>
+</html>
