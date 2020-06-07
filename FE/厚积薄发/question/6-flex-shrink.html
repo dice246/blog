@@ -22,12 +22,38 @@
       flex: 2 1 400px;
       background: yellow;
     }
+
+    p {
+      width: 600px;
+    }
   </style>
 </head>
 <body>
+  <p>
+    <pre>
+
+对应题目：
+
+子项溢出空间的宽度为 $500 + 400 - 600 = 300$
+left 收缩比例：$(500 × 2) ÷ (500 × 2 + 400 × 1) ≈ 0.7143$
+right 收缩比例：$(400 × 1) ÷ (500 × 2 + 400 × 1) ≈ 0.2857$
+对应的：
+
+left 收缩宽度：$0.7143 × 300 = 214.29$
+right 收缩宽度：$0.2857 × 300 = 85.71$
+所以：
+
+left 最终宽度：$500 - 214.29 = 285.71$
+right 最终宽度：$400 - 85.71 = 314.29$
+  </pre>
+  </p>
   <div class="container">
-    <div class="left"></div>
-    <div class="right"></div>
+    <div class="left">
+      flex: 1 2 500px
+    </div>
+    <div class="right">
+      flex: 2 1 400px
+    </div>
   </div>
 </body>
 </html>
