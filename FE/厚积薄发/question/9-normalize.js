@@ -6,7 +6,7 @@
 const normalize = (str) => {
   let result = {};
   let tmp = str.split(/[\[\]]/g);
-  tmp = tmp.filter(Boolean);
+  tmp = tmp.filter(item => item.length);
 
   tmp.reduce((obj, item, index, a) => {
     obj.value = item
