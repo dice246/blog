@@ -56,7 +56,4 @@ class Queue {
   }
 }
 
-let q = new Queue();
-
-q.enqueue(1)
-console.log(q.peek());
+module.exports = Queue;
