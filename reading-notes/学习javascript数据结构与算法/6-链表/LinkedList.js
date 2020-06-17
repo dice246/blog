@@ -73,5 +73,49 @@ class LinkedList {
 
     return false;
   }
+
+  indexOf(element) {
+    let current = this.head;
+
+    for (let i = 0; i < this.count && current !== null; i++) {
+      if (element === current.element) {
+        return i;
+      }
+
+      current = current.next;
+    }
+
+    return -1;
+  }
+
+  remove(element) {
+    const index = this.indexOf(element);
+    return this.removeAt(index)
+  }
+
+  size() {
+    return this.count;
+  }
+
+  isEmpty() {
+    return this.size() === 0;
+  }
+
+  getHead() {
+    return this.head;
+  }
+
+  toString() {
+    if (this.head == null) {
+      return '';
+    }
+    let objString = `${this.head.element}`;
+    let current = this.head.next; // {3}
+    for (let i = 1; i < this.size() && current != null; i++) {
+      objString = `${objString},${current.element}`;
+      current = current.next;
+    }
+    return objString;
+  }
 }
 
