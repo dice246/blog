@@ -38,19 +38,21 @@ class Set {
   }
 }
 
-const set = new Set();
+module.exports = Set;
 
-set.add(1)
-set.add(2)
-
-console.log(set.values());
-
-console.log(set.has(1))
-console.log(set.has(3))
-
-console.log(set.delete(1));
-
-console.log(set.size());
-
-set.clear();
-console.log(set.values());
+// const set = new Set();
+//
+// set.add(1)
+// set.add(2)
+//
+// console.log(set.values());
+//
+// console.log(set.has(1))
+// console.log(set.has(3))
+//
+// console.log(set.delete(1));
+//
+// console.log(set.size());
+//
+// set.clear();
+// console.log(set.values());
