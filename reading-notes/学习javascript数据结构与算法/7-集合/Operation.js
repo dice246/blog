@@ -25,6 +25,30 @@ class Operation extends SetCustom {
 
     return intersection;
   }
+
+  improveIntersection (otherSet) {
+    const ii = new SetCustom();
+    const values = this.values();
+    const otherValues = otherSet.values();
+
+    let bigValues, smallValues;
+
+    if (values.length > otherValues.length) {
+      bigValues = values;
+      smallValues = otherValues;
+    } else {
+      bigValues = otherValues;
+      smallValues = values;
+    }
+
+    smallValues.forEach(item => {
+      if (bigValues.includes(item)) {
+        ii.add(item)
+      }
+    })
+
+    return ii;
+  }
 }
 
 const o1 = new Operation();
@@ -42,3 +66,6 @@ console.log('并集：', union.values());
 
 const intersection = o1.intersection(s1);
 console.log('交集：', intersection.values());
+
+const ii = o1.improveIntersection(s1);
+console.log('优化之后的交集: ', ii.values());
