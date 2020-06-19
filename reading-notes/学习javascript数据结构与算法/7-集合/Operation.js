@@ -49,6 +49,19 @@ class Operation extends SetCustom {
 
     return ii;
   }
+
+  difference(otherSet) {
+    let result = new SetCustom();
+    let values = this.values();
+
+    values.forEach(item => {
+      if (!otherSet.has(item)) {
+        result.add(item)
+      }
+    })
+
+    return result;
+  }
 }
 
 const o1 = new Operation();
@@ -69,3 +82,6 @@ console.log('交集：', intersection.values());
 
 const ii = o1.improveIntersection(s1);
 console.log('优化之后的交集: ', ii.values());
+
+const d = o1.difference(s1);
+console.log('差集： ', d.values());
