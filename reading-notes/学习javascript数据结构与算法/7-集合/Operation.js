@@ -62,6 +62,22 @@ class Operation extends SetCustom {
 
     return result;
   }
+
+  isSubsetOf(otherSet) {
+    if (this.size() !== otherSet.size()) {
+      return false;
+    }
+
+    let is = true;
+
+    this.values().forEach(item => {
+      if (!otherSet.has(item)) {
+        is = false;
+      }
+    })
+
+    return is;
+  }
 }
 
 const o1 = new Operation();
@@ -74,6 +90,11 @@ s1.add(3);
 s1.add(4);
 s1.add(5);
 
+const s2 = new SetCustom();
+s2.add(1);
+s2.add(2);
+s2.add(3);
+
 const union  = o1.union(s1) // 并集
 console.log('并集：', union.values());
 
@@ -85,3 +106,9 @@ console.log('优化之后的交集: ', ii.values());
 
 const d = o1.difference(s1);
 console.log('差集： ', d.values());
+
+const is = o1.isSubsetOf(s1);
+console.log(is);
+
+const is2 = o1.isSubsetOf(s2);
+console.log(is2);
