@@ -5,6 +5,7 @@ class Operation extends SetCustom {
     super();
   }
 
+  // 并集
   union(otherSet) {
     let union = new Set();
     this.values().forEach(item => union.add(item));
@@ -13,6 +14,7 @@ class Operation extends SetCustom {
     return union;
   }
 
+  // 交集
   intersection (otherSet) {
     let intersection = new SetCustom();
     let values = this.values();
@@ -50,6 +52,7 @@ class Operation extends SetCustom {
     return ii;
   }
 
+  // 差集
   difference(otherSet) {
     let result = new SetCustom();
     let values = this.values();
