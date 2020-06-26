@@ -65,6 +65,8 @@ class HashTable {
   }
 }
 
+module.exports = HashTable
+
 const hash = new HashTable();
 hash.put('Gandalf', 'gandalf@email.com');
 hash.put('John', 'johnsnow@email.com');
