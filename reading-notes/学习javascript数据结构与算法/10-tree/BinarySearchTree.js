@@ -34,7 +34,22 @@ class BinarySearchTree {
     }
   }
 
-  search(key) {
+  search (key) {
+    return this.searchNode(this.root, key);
+  }
+
+  searchNode (node, key) {
+    if (node === null) {
+      return false
+    }
+
+    if (this.compareFn(key, node.key) === compare.LESS_THAN ) {
+      return this.searchNode(node.left, key)
+    } else if (this.compareFn(key, node.key) === compare.BIGGER_THAN) {
+      return this.searchNode(node.right, key)
+    } else {
+      return true
+    }
   }
 
   /**
@@ -114,6 +129,7 @@ class BinarySearchTree {
   }
 
   remove(key) {
+
   }
 }
 
@@ -155,3 +171,7 @@ console.log(bs.min());
 
 console.log('max......')
 console.log(bs.max());
+
+console.log('search....')
+console.log(bs.search(18))
+console.log(bs.search(1111))
