@@ -86,6 +86,17 @@ class BinarySearchTree {
   }
 
   min() {
+    return this.minNode(this.root);
+  }
+
+  minNode (node) {
+    let current = node;
+
+    while (current && current.left) {
+      current = current.left;
+    }
+
+    return current;
   }
 
   max() {
@@ -127,3 +138,6 @@ console.log('后序遍历....')
 bs.postOrderTraverse(function (item) {
   console.log(item)
 })
+
+console.log('min......')
+console.log(bs.min());
