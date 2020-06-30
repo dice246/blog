@@ -100,6 +100,17 @@ class BinarySearchTree {
   }
 
   max() {
+    return this.maxNode(this.root)
+  }
+
+  maxNode (node) {
+    let current = node;
+
+    while (current && current.right) {
+      current = current.right
+    }
+
+    return current
   }
 
   remove(key) {
@@ -141,3 +152,6 @@ bs.postOrderTraverse(function (item) {
 
 console.log('min......')
 console.log(bs.min());
+
+console.log('max......')
+console.log(bs.max());
