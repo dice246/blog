@@ -50,7 +50,22 @@ class BinarySearchTree {
       this.inOrderTraverseNode(node.right,cb);
     }
   }
-  preOrderTraverse() {}
+
+  /**
+   * 先序遍历
+   * @param cb
+   */
+  preOrderTraverse (cb) {
+    this.preOrderTraverseNode(this.root, cb)
+  }
+
+  preOrderTraverseNode (node, cb) {
+    if (node) {
+      cb(node.key)
+      this.preOrderTraverseNode(node.left, cb);
+      this.preOrderTraverseNode(node.right, cb);
+    }
+  }
   postOrderTraverse() {}
   min () {}
   max () {}
@@ -67,6 +82,12 @@ bs.insert(15);
 bs.insert(3);
 bs.insert(7);
 
+console.log('中序遍历.......')
 bs.inOrderTraverse(function (item) {
+  console.log(item)
+})
+
+console.log('先序遍历.......')
+bs.preOrderTraverse(function (item) {
   console.log(item)
 })
