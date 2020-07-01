@@ -160,7 +160,7 @@ class BinarySearchTree {
       const aux = this.minNode(node.right);
       node.key = aux.key;
 
-      node.right = this.removeNode(node.right, key);
+      node.right = this.removeNode(node.right, aux.key);
       return node;
     }
 
