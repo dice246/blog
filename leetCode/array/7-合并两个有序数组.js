@@ -24,4 +24,20 @@ var merge = function (nums1, m, nums2, n) {
   arrayCopy(nums2, 0, nums1, 0, len2 + 1);
 };
 
+/**
+ * 通俗易懂
+ * @param nums1
+ * @param m
+ * @param nums2
+ * @param n
+ */
+var merge2 = function(nums1, m, nums2, n) {
+  nums1.splice(m);
+  nums2.splice(n)
+
+  nums1.push(...nums2);
+
+  nums1.sort((a,b) => a-b);
+};
+
 merge([1,2,3,0,0,0], 3, [2,5,6], 3)
