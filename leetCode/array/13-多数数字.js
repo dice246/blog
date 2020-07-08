@@ -1,4 +1,6 @@
 /**
+ * 1. 通过对象遍历出每个item的次数
+ * 2. 遍历对象取出大于 N / 2 的值
  * @param {number[]} nums
  * @return {number}
  */
