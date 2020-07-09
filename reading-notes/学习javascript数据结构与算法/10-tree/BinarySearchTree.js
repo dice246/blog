@@ -167,6 +167,8 @@ class BinarySearchTree {
   }
 }
 
+module.exports = BinarySearchTree
+
 
 let bs = new BinarySearchTree();
 bs.insert(11);
