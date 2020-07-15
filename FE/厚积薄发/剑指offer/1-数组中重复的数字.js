@@ -5,17 +5,17 @@
  */
 var findRepeatNumber = function(nums) {
   let map = {};
+  let len = nums.length;
 
-  nums.forEach(item => {
+  for (let i = 0; i < len; i++) {
+    let item = nums[i];
+
     if(map[item]) {
-      map[item] = map[item] + 1;
+      return item;
     } else {
       map[item] = 1;
     }
-  })
-
-  let values = Object.entries(map).find(item => item[1] > 1);
-  return values[0]
+  }
 };
 
-findRepeatNumber([2, 3, 1, 0, 2, 5, 3])
+console.log(findRepeatNumber([2, 3, 1, 0, 2, 5, 3]))
